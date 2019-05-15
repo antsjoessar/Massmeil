@@ -3,7 +3,7 @@
 $pdo = new PDO('mysql:host=localhost;dbname=e_postid', 'kasutaja', 'parool');			// andmbaasiga ühenduse loomine
 $sql = "SELECT Epost FROM Epost";								// andmebaasist õige tabeli valimine
 
-    foreach ($pdo->query($sql) as $row) {
+foreach ($pdo->query($sql) as $row) {
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $mail->IsSMTP(); 									// lihtnemeiliedastus protokoll (SMTP) lubatud
         $mail->SMTPDebug = 1; 									// debugging: 1 = error ja sõnum, 2 = sõnum ainult, 0 = mitte midagi
