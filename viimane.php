@@ -32,7 +32,7 @@ else
 ?>
 <html>
 <body>
-<form method='POST' action='sisu69.php'>
+<form method='POST' action='viimane.php'>
 Subject: <input name='subject' type='text' />
 Message:
 <textarea name='message' rows='15' cols='40'>
