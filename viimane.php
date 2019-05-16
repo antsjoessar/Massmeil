@@ -9,7 +9,7 @@ foreach ($pdo->query($sql) as $row) {
         $mail->SMTPDebug = 1; 									// debugging: 1 = error ja sõnum, 2 = sõnum ainult, 0 = mitte midagi
         $mail->CharSet = "UTF-8";								// teisendusvorming
         $mail->SMTPAuth = true; 								// audentimine lubatud
-        $mail->SMTPSecure = 'ssl'; 								// turvasoklite kihi protokoll secure transfer enabled REQUIRED for Gmail
+        $mail->SMTPSecure = 'ssl'; 								// turvasoklite kihi protokoll
         $mail->Host = 'smtp.gmail.com';								// gmaili meiliserveri aadress
         $mail->Port = 465; 									// pordid TLS=587, SSL=465, random=25
         $mail->IsHTML(true);									// märgistuskeele (HTML) lubamine
