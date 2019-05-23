@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","kasutaja","parool","e_postid");
+$con=mysqli_connect("localhost","root","ASDqwe123","e_postid");
 // Check connection
 if (mysqli_connect_errno())
 {
@@ -30,8 +30,6 @@ echo "<td>" . $row['Ametikoht'] . "</td>";
 echo "</tr>";
 }
 echo "</table>";
-
-mysqli_close($con);
 ?>
 
 <?php
@@ -39,21 +37,15 @@ mysqli_close($con);
   if (isset($_REQUEST['Epost']))  {
 
   //Email information
-  $admin_Epost = "ajoessar@gmail.com";
-  $Epost = $_REQUEST['Epost'];
+  $admin_Epost = $_REQUEST['Epost'];
+  $Epost = "ants.joessar@khk.ee";
   $subject = $_REQUEST['subject'];
   $comment = $_REQUEST['comment'];
-  $headers = "From: ants.joessar@khk.ee\r\n";
-  $headers .= "Reply-To: ants.joessar@khk.ee\r\n";
-  $headers .= "Return-Path: ants.joessar@khk.ee\r\n";
-  $headers .= "CC: ants.joessar@khk.ee\r\n";
-  $headers .= "BCC: ants.joessar@khk.ee\r\n";
-
   //send Epost
-  mail($admin_Epost, $admin_Password, "$subject", $comment, "From:" . $Epost);
+  mail($admin_Epost, "$subject", $comment, "From:" . $Epost);
   sleep(4);
   //Epost response
-  echo "Thank you for contacting us!";
+  echo "Kiri on välja saadetud!";
   }
 
   //if "Epost" variable is not filled out, display the form
@@ -62,8 +54,8 @@ mysqli_close($con);
 
  <form method="post">
 
-  Epost: <input name="Epost" type="text" />
-
+  Saaja: <input name="Epost" type="text" />
+   
   Teema: <input name="subject" type="text" />
 
   Sõnum:
@@ -75,10 +67,9 @@ mysqli_close($con);
 
 <?php
 echo '
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.nooruse.ee/application/files/6815/0289/1291/korgkooli_logo-500px.jpg">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.nooruse.ee/applica$
 <html>
-<img src="/root/korgkooli_logo-500px.jpg" width="280" height="125" title="Kooli logo" alt="Kooli logo" />
-
+<img src="/root/korgkooli_logo-500px.jpg" width="280" height="125" title="Kooli l$
 </html>
 ';
 ?>
