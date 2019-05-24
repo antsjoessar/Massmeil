@@ -1,6 +1,6 @@
 <?php
 $con=mysqli_connect("localhost","kasutaja","parool","e_postid");
-// Check connection
+// Kontrollib ühendust
 if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -33,23 +33,23 @@ echo "</table>";
 ?>
 
 <?php
-//if "Epost" variable is filled out, send Epost
+//kui "Epost" väli on täidetud, saada Epost
   if (isset($_REQUEST['Epost']))  {
 
-  //Email information
+  //Epost andmed
   $admin_Epost = $_REQUEST['Epost'];
   $Epost = "ants.joessar@khk.ee";
   $subject = $_REQUEST['subject'];
   $comment = $_REQUEST['comment'];
-  //send Epost
+  //saada Epost
   mail($admin_Epost, "$subject", $comment, "From:" . $Epost);
   sleep(4);
-  //Epost response
+  //Epost vastus
   echo "Kiri on välja saadetud!";
   }
 
-  //if "Epost" variable is not filled out, display the form
-  else  {
+  //kui "Epost" väli on tühi, kuva algvorm 
+else  {
 ?>
 
  <form method="post">
