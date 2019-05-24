@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","ASDqwe123","e_postid");
+$con=mysqli_connect("localhost","kasutaja","parool","e_postid");
 // Check connection
 if (mysqli_connect_errno())
 {
