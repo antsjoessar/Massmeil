@@ -3,7 +3,7 @@ $con=mysqli_connect("localhost","kasutaja","parool","e_postid");
 // Kontrollib ühendust
 if (mysqli_connect_errno())
 {
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
+echo "Ühendus nurjus: " . mysqli_connect_error();
 }
 
 $result = mysqli_query($con,"SELECT * FROM Epost");
